@@ -3,6 +3,9 @@ name = "hexlet-code"
 version = "0.1.0"
 description = "CLI for loading internet page"
 authors = ["Nazar Annakhalov <nazar.annahalov@yandex.ru>"]
+packages = [
+    { include = "page_loader" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
