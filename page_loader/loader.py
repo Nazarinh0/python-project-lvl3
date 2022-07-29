@@ -15,9 +15,9 @@ def download(page_url, path=os.getcwd()):
 
 
 def get_dest_name(source):
-    # get url address without scheme for future output file name
+    # cut scheme from url for future output file name
     match = re.search(r"(?<=//).*", source)
-    # output file name will always be html
+    # output file name will always end with .html
     name = re.sub(r"\W", "-", match.group()) + '.html'
     return name
 
