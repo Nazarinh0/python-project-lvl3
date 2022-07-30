@@ -1,5 +1,6 @@
 """Main script"""
 import argparse
+from page_loader import download
 
 
 def main():
@@ -11,6 +12,7 @@ def main():
         '--output',
         help='path to existing directory, in which HTML will be saved')
     args = parser.parse_args()
+    print(download(args.page_url, args.output))
 
 
 if __name__ == '__main__':
