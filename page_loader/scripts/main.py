@@ -12,5 +12,6 @@ def main():
         help='path to existing directory, in which HTML will be saved')
     args = parser.parse_args()
 
+
 if __name__ == '__main__':
     main()
