@@ -35,7 +35,7 @@ def download(page_url, path):
     with open(file_path, 'w') as f:
         f.write(html)
     log_info.info(f'HTML file was downloaded while pathing to {file_path}')
-    return file_name
+    return file_path
 
 
 def get_dest_name(source):
