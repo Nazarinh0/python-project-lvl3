@@ -5,10 +5,12 @@ import requests
 import logging.config
 from bs4 import BeautifulSoup
 from page_loader.logger_config import LOGGING_CONFIG
-from page_loader.logger_config import log_info, log_error
+from page_loader.logger_config import log_info
+from progress.bar import ShadyBar
 
 
 logging.config.dictConfig(LOGGING_CONFIG)
+
 
 def download(page_url, path):
     page = requests.get(page_url)
@@ -41,15 +43,20 @@ def get_resources(source, directory, page_url):
     }
     soup = BeautifulSoup(source.content, "html.parser")
     tags = soup.findAll(['img', 'link', 'script'])
-    for tag in tags:
-        attr = tag_attr_dict[tag.name]
-        url = tag.get(attr)
-        full_url = urljoin(page_url, url)
-        if urlparse(full_url).netloc == urlparse(page_url).netloc:
-            file_ext = os.path.splitext(full_url)
-            file_name = get_dest_name(file_ext[0]) + file_ext[1]
-            download_file(full_url, file_name, directory)
-            tag[attr] = os.path.join(directory, file_name)
+    len_for_bar = len(tags)
+    with ShadyBar('Downloading',
+                  max=len_for_bar,
+                  suffix='%(percent)d%%') as bar:
+        for tag in tags:
+            bar.next()
+            attr = tag_attr_dict[tag.name]
+            url = tag.get(attr)
+            full_url = urljoin(page_url, url)
+            if urlparse(full_url).netloc == urlparse(page_url).netloc:
+                file_ext = os.path.splitext(full_url)
+                file_name = get_dest_name(file_ext[0]) + file_ext[1]
+                download_file(full_url, file_name, directory)
+                tag[attr] = os.path.join(directory, file_name)
     return soup.prettify()
 
 
