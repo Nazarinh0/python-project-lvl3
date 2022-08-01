@@ -66,7 +66,10 @@ def get_resources(source, directory, page_url, dir_path):
             full_url = urljoin(page_url, url)
             if urlparse(full_url).netloc == urlparse(page_url).netloc:
                 file_ext = os.path.splitext(full_url)
-                file_name = get_dest_name(file_ext[0]) + file_ext[1]
+                if file_ext[1] == '':
+                    file_name = get_dest_name(file_ext[0]) + '.html'
+                else:
+                    file_name = get_dest_name(file_ext[0]) + file_ext[1]
                 download_file(full_url, file_name, dir_path)
                 tag[attr] = os.path.join(directory, file_name)
     return soup.prettify()
