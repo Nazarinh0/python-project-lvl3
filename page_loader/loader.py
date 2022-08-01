@@ -2,19 +2,27 @@ import os
 import re
 from urllib.parse import urljoin, urlparse
 import requests
+import logging.config
 from bs4 import BeautifulSoup
+from page_loader.logger_config import LOGGING_CONFIG
+from page_loader.logger_config import log_info, log_error
 
+
+logging.config.dictConfig(LOGGING_CONFIG)
 
 def download(page_url, path):
     page = requests.get(page_url)
+    log_info.info('Successful connection!')
     file_name = get_dest_name(page_url) + '.html'
     dir_name = get_dest_name(page_url) + '_files'
     dir_path = os.path.join(path, dir_name)
     os.mkdir(dir_path)
+    log_info.info(f'Directory was created: {dir_path}')
     html = get_resources(page, dir_name, page_url)
     file_path = os.path.join(path, file_name)
     with open(file_path, 'w') as f:
         f.write(html)
+    log_info.info(f'HTML file was downloaded while pathing to {file_path}')
     return file_name
 
 
