@@ -11,7 +11,7 @@ def main():
     )
     parser.add_argument('page_url')
     parser.add_argument(
-        '--output',
+        '-o', '--output',
         help='path to existing directory, in which HTML will be saved',
         type=str,
         default=os.getcwd()
