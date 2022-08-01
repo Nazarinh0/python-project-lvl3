@@ -9,7 +9,6 @@ from page_loader.logger_config import log_info, log_error
 from progress.bar import ShadyBar
 
 
-
 logging.config.dictConfig(LOGGING_CONFIG)
 
 
@@ -84,10 +83,8 @@ def download_file(url, file_name, dir_name):
             if chunk:
                 file.write(chunk)
 
-def get_data(link):
-    """'link' is url to web page.
-    Returns response."""
 
+def get_data(link):
     from page_loader import ExpectedException
 
     check_log = 'Check .page-loader-errors.log for details'
