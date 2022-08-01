@@ -14,11 +14,16 @@ logging.config.dictConfig(LOGGING_CONFIG)
 
 
 def download(page_url, path):
+    check_log = 'Check .page-loader-errors.log for details'
+    check_url = 'Failed to access the site. Check your internet access or url:'
     from page_loader import ExpectedException
     try:
-        page = requests.get(page_url)
-    except ExpectedException as error:
+        page = get_data(page_url)
+        page.raise_for_status()
+    except requests.RequestException as error:
         log_error.error(error)
+        log_info.info(f'\n{check_url} {page_url}\n{check_log}')
+        raise ExpectedException(error)
     log_info.info('Successful connection!')
     file_name = get_dest_name(page_url) + '.html'
     dir_name = get_dest_name(page_url) + '_files'
@@ -41,7 +46,6 @@ def get_dest_name(source):
 
 
 def get_resources(source, directory, page_url):
-    from page_loader import ExpectedException
     tag_attr_dict = {
         'img': 'src',
         'link': 'href',
@@ -58,10 +62,7 @@ def get_resources(source, directory, page_url):
         for tag in tags:
             bar.next()
             attr = tag_attr_dict[tag.name]
-            try:
-                url = tag.get(attr)
-            except ExpectedException as error:
-                log_error.error(error)
+            url = tag.get(attr)
             full_url = urljoin(page_url, url)
             if urlparse(full_url).netloc == urlparse(page_url).netloc:
                 file_ext = os.path.splitext(full_url)
@@ -72,10 +73,28 @@ def get_resources(source, directory, page_url):
 
 
 def download_file(url, file_name, dir_name):
-    response = requests.get(url, stream=True)
+    response = get_data(url)
     with open(os.path.join(dir_name, file_name), 'wb') as file:
         # file.write(response.content)
         for chunk in response.iter_content(chunk_size=1024):
             # filter out keep-alive new chunks
             if chunk:
                 file.write(chunk)
+
+def get_data(link):
+    """'link' is url to web page.
+    Returns response."""
+
+    from page_loader import ExpectedException
+
+    check_log = 'Check .page-loader-errors.log for details'
+    check_url = 'Failed to access the site. Check your internet access or url:'
+
+    try:
+        response = requests.get(link)
+        response.raise_for_status()
+    except requests.RequestException as error:
+        log_error.error(error)
+        log_info.info(f'\n{check_url} {link}\n{check_log}')
+        raise ExpectedException(error)
+    return response
