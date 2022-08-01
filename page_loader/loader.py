@@ -30,7 +30,7 @@ def download(page_url, path):
     dir_path = os.path.join(path, dir_name)
     os.mkdir(dir_path)
     log_info.info(f'Directory was created: {dir_path}')
-    html = get_resources(page, dir_name, page_url)
+    html = get_resources(page, dir_name, page_url, dir_path)
     file_path = os.path.join(path, file_name)
     with open(file_path, 'w') as f:
         f.write(html)
@@ -45,7 +45,7 @@ def get_dest_name(source):
     return name
 
 
-def get_resources(source, directory, page_url):
+def get_resources(source, directory, page_url, dir_path):
     tag_attr_dict = {
         'img': 'src',
         'link': 'href',
@@ -67,7 +67,7 @@ def get_resources(source, directory, page_url):
             if urlparse(full_url).netloc == urlparse(page_url).netloc:
                 file_ext = os.path.splitext(full_url)
                 file_name = get_dest_name(file_ext[0]) + file_ext[1]
-                download_file(full_url, file_name, directory)
+                download_file(full_url, file_name, dir_path)
                 tag[attr] = os.path.join(directory, file_name)
     return soup.prettify()
 
