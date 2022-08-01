@@ -9,11 +9,16 @@ from page_loader.logger_config import log_info, log_error
 from progress.bar import ShadyBar
 
 
+
 logging.config.dictConfig(LOGGING_CONFIG)
 
 
 def download(page_url, path):
-    page = requests.get(page_url)
+    from page_loader import ExpectedException
+    try:
+        page = requests.get(page_url)
+    except ExpectedException as error:
+        log_error.error(error)
     log_info.info('Successful connection!')
     file_name = get_dest_name(page_url) + '.html'
     dir_name = get_dest_name(page_url) + '_files'
