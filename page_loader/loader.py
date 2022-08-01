@@ -5,7 +5,7 @@ import requests
 import logging.config
 from bs4 import BeautifulSoup
 from page_loader.logger_config import LOGGING_CONFIG
-from page_loader.logger_config import log_info
+from page_loader.logger_config import log_info, log_error
 from progress.bar import ShadyBar
 
 
@@ -36,6 +36,7 @@ def get_dest_name(source):
 
 
 def get_resources(source, directory, page_url):
+    from page_loader import ExpectedException
     tag_attr_dict = {
         'img': 'src',
         'link': 'href',
@@ -44,13 +45,18 @@ def get_resources(source, directory, page_url):
     soup = BeautifulSoup(source.content, "html.parser")
     tags = soup.findAll(['img', 'link', 'script'])
     len_for_bar = len(tags)
+    if not tags:
+        log_error.error(f"Attributes src weren't found in {tags}\n")
     with ShadyBar('Downloading',
                   max=len_for_bar,
                   suffix='%(percent)d%%') as bar:
         for tag in tags:
             bar.next()
             attr = tag_attr_dict[tag.name]
-            url = tag.get(attr)
+            try:
+                url = tag.get(attr)
+            except ExpectedException as error:
+                log_error.error(error)
             full_url = urljoin(page_url, url)
             if urlparse(full_url).netloc == urlparse(page_url).netloc:
                 file_ext = os.path.splitext(full_url)
