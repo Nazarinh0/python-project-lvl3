@@ -18,6 +18,6 @@ def test_loader_filename():
     with requests_mock.Mocker() as m:
         page_url = 'http://ru.hexlet.io/courses'
         m.get(page_url, text='example text\n')
-        expected = 'ru-hexlet-io-courses.html'
         with tempfile.TemporaryDirectory() as tmpdir:
+            expected = tmpdir + '/' + 'ru-hexlet-io-courses.html'
             assert download(page_url, path=tmpdir) == expected
