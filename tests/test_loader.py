@@ -7,7 +7,7 @@ from page_loader import download
 def test_loader_content():
     with requests_mock.Mocker() as m:
         page_url = 'http://ru.hexlet.io/courses'
-        m.get(page_url, text = 'example text\n')
+        m.get(page_url, text='example text\n')
         with tempfile.TemporaryDirectory() as tmpdir:
             download(page_url, path=tmpdir)
             with open(os.path.join(tmpdir, 'ru-hexlet-io-courses.html')) as f:
@@ -17,7 +17,7 @@ def test_loader_content():
 def test_loader_filename():
     with requests_mock.Mocker() as m:
         page_url = 'http://ru.hexlet.io/courses'
-        m.get(page_url, text = 'example text\n')
+        m.get(page_url, text='example text\n')
         expected = 'ru-hexlet-io-courses.html'
         with tempfile.TemporaryDirectory() as tmpdir:
             assert download(page_url, path=tmpdir) == expected
