@@ -40,7 +40,7 @@ def test_loader_resources():
         html_content = 'tests/fixtures/ru-hexlet-io-courses-python-oop-basics.html'
 
         m.get(page_url, text=read(html_content))
-        m.get(rss_url, text =read('tests/fixtures/ru-hexlet-io-lessons.rss'))
+        m.get(rss_url, text=read('tests/fixtures/ru-hexlet-io-lessons.rss'))
         m.get(link_url, text=read(html_content))
 
         with tempfile.TemporaryDirectory() as tmpdir:

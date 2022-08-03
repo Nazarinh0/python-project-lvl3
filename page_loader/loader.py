@@ -18,7 +18,6 @@ def download(page_url, path):
 
     from page_loader import ExpectedException
 
-
     try:
         page = get_data(page_url)
         page.raise_for_status()
