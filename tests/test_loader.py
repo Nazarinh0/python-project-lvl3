@@ -43,5 +43,8 @@ def test_download_file_exist():
         m.get(link_url, text=read(html_content))
 
         with tempfile.TemporaryDirectory() as tmpdir:
+            download(page_url, path=tmpdir)
             expected = tmpdir + '/' + 'ru-hexlet-io-courses-python-oop-basics.html'
-            assert download(page_url, path=tmpdir) == expected
+            resources_dir = os.path.join(tmpdir, 'ru-hexlet-io-courses-python-oop-basics_files')
+            assert len(os.listdir(resources_dir)) == 2
+
