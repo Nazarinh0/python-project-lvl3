@@ -5,6 +5,7 @@ import requests_mock
 from page_loader import download
 from requests.exceptions import Timeout, ConnectionError, HTTPError
 
+
 def read(file, binary=False):
     if not binary:
         with open(file, 'r') as f:
