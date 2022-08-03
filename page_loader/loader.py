@@ -82,7 +82,6 @@ def get_resources(source, directory, page_url, dir_path):
 def download_file(url, file_name, dir_name):
     response = get_data(url)
     with open(os.path.join(dir_name, file_name), 'wb') as file:
-        # file.write(response.content)
         for chunk in response.iter_content(chunk_size=1024):
             # filter out keep-alive new chunks
             if chunk:
