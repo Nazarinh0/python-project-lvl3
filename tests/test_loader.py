@@ -1,8 +1,9 @@
 import os.path
 import tempfile
+import pytest
 import requests_mock
 from page_loader import download
-
+from requests.exceptions import Timeout, ConnectionError, HTTPError
 
 def read(file, binary=False):
     if not binary:
@@ -50,3 +51,13 @@ def test_loader_resources():
             actual_rss = os.path.join(resources_dir, 'ru-hexlet-io-lessons.rss')
             expected_rss = read('tests/fixtures/ru-hexlet-io-lessons.rss')
             assert read(actual_rss) == expected_rss
+
+
+@pytest.mark.parametrize('errors', [
+    Timeout, ConnectionError, HTTPError])
+def test_loader_errors(errors):
+    with requests_mock.Mocker() as m, tempfile.TemporaryDirectory() as tmpdir:
+        page_url = 'http://ru.hexlet.io/courses'
+        m.get(page_url, exc=errors)
+        with pytest.raises(Exception):
+            assert download(page_url, tmpdir)
