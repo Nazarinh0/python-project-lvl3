@@ -15,7 +15,10 @@ logging.config.dictConfig(LOGGING_CONFIG)
 def download(page_url, path):
     check_log = 'Check .page-loader-errors.log for details'
     check_url = 'Failed to access the site. Check your internet access or url:'
+
     from page_loader import ExpectedException
+
+
     try:
         page = get_data(page_url)
         page.raise_for_status()
@@ -23,6 +26,7 @@ def download(page_url, path):
         log_error.error(error)
         log_info.info(f'\n{check_url} {page_url}\n{check_log}')
         raise ExpectedException(error)
+
     log_info.info('Successful connection!')
     file_name = get_dest_name(page_url) + '.html'
     dir_name = get_dest_name(page_url) + '_files'
