@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Новые уроки на Хекслете</title>
+    <description>Практические уроки по программированию</description>
+    <link>https://ru.hexlet.io/</link>
+    <webMaster>info@hexlet.io</webMaster>
+    <item>
+      <title>Controller hierarchy / Ruby: Реальный Rails</title>
+      <guid isPermaLink="false">2862</guid>
+      <link>https://ru.hexlet.io/courses/rails-real/lessons/controller-hierarcy/theory_unit</link>
+      <description>Цель: Познакомиться с иерархией контроллеров</description>
+      <pubDate>Mon, 01 Aug 2022 09:32:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>Введение / Основы Typescript</title>
+      <guid isPermaLink="false">2839</guid>
+      <link>https://ru.hexlet.io/courses/typescript-basics/lessons/intro/theory_unit</link>
+      <description>Цель: Познакомиться с курсом</description>
+      <pubDate>Wed, 27 Jul 2022 21:43:27 +0000</pubDate>
+    </item>
+    <item>
+      <title>Многомерные массивы в Numpy / Работа с многомерными массивами данных с Python и Numpy</title>
+      <guid isPermaLink="false">2847</guid>
+      <link>https://ru.hexlet.io/courses/python-numpy/lessons/numpy-arrays/theory_unit</link>
+      <description>Цель: Учимся создавать и использовать массива ndarray — основную структуру данных библиотеки Numpy</description>
+      <pubDate>Wed, 27 Jul 2022 11:48:48 +0000</pubDate>
+    </item>
+    <item>
+      <title>Индексы, срезы и итеративный обход / Работа с многомерными массивами данных с Python и Numpy</title>
+      <guid isPermaLink="false">2848</guid>
+      <link>https://ru.hexlet.io/courses/python-numpy/lessons/indexing-slicing/theory_unit</link>
+      <description>Цель: Знакомимся с правилами индексирования массивов и учимся выполнять срез данных</description>
+      <pubDate>Wed, 27 Jul 2022 11:48:40 +0000</pubDate>
+    </item>
+    <item>
+      <title>Введение / Работа с многомерными массивами данных с Python и Numpy</title>
+      <guid isPermaLink="false">2846</guid>
+      <link>https://ru.hexlet.io/courses/python-numpy/lessons/intro/theory_unit</link>
+      <description>Цель: Знакомимся с библиотекой Numpy и ее ключевыми особенностями</description>
+      <pubDate>Wed, 27 Jul 2022 11:48:08 +0000</pubDate>
+    </item>
+    <item>
+      <title>Модули и зависимости / Go: Настройка окружения</title>
+      <guid isPermaLink="false">2845</guid>
+      <link>https://ru.hexlet.io/courses/go-setup-environment/lessons/modules-and-dependencies/theory_unit</link>
+      <description>Цель: Разбираемся в модулях и управлении зависимостями в проекте</description>
+      <pubDate>Tue, 26 Jul 2022 06:20:53 +0000</pubDate>
+    </item>
+    <item>
+      <title>Пакеты / Go: Настройка окружения</title>
+      <guid isPermaLink="false">2844</guid>
+      <link>https://ru.hexlet.io/courses/go-setup-environment/lessons/packages/theory_unit</link>
+      <description>Цель: Разбираем, как объявлять пакеты и импортировать их</description>
+      <pubDate>Tue, 26 Jul 2022 06:20:46 +0000</pubDate>
+    </item>
+    <item>
+      <title>Запуск первой программы на Go / Go: Настройка окружения</title>
+      <guid isPermaLink="false">2843</guid>
+      <link>https://ru.hexlet.io/courses/go-setup-environment/lessons/the-first-program/theory_unit</link>
+      <description>Цель: Учимся использовать базовые команды и создавать проекты в экосистеме Go</description>
+      <pubDate>Tue, 26 Jul 2022 06:20:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>Введение / Go: Настройка окружения</title>
+      <guid isPermaLink="false">2842</guid>
+      <link>https://ru.hexlet.io/courses/go-setup-environment/lessons/intro/theory_unit</link>
+      <description>Цель: Знакомимся с языком Go и целями курса</description>
+      <pubDate>Tue, 26 Jul 2022 06:20:24 +0000</pubDate>
+    </item>
+    <item>
+      <title>Как справиться со стрессом / Трудоустройство</title>
+      <guid isPermaLink="false">2377</guid>
+      <link>https://ru.hexlet.io/courses/employment/lessons/how-to-pass-the-interview-without-stress/theory_unit</link>
+      <description>Цель: Как снизить уровень стресса и что делать до, во время и после собеседования</description>
+      <pubDate>Mon, 25 Jul 2022 12:59:22 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

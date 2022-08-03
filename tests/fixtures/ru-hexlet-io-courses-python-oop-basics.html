@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang='ru' prefix='og: https://ogp.me/ns#'>
+<head>
+<title>Курс «Python ООП»: введение в ооп на языке питон для начинающих</title>
+<meta name="description" content="Курс «Объектно-ориентированное программирование на Python» для начинающих. Изучайте основы объектно-ориентированного программирования на питоне с нуля: объекты, методы, наследование">
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="ZxeeSdVJc9--yzrnsgctDnpzHV4_eSbkhPiQS9GPrSSWiNU-3JcIVet83CUofrWaEsYOLqNi2kd8eQL3ckcZPw" />
+<meta name="csp-nonce" />
+<link rel="icon" type="image/x-icon" href="https://cdn2.hexlet.io/assets/favicon-9213ff1fc34b4e2da96c3b3eb582b3d10180b250e993141d7928d6aa1f5647c1.ico" />
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<meta charset='utf-8'>
+<meta content='IE=Edge' http-equiv='X-UA-Compatible'>
+<meta content='b9d3902d34' name='verify-admitad'>
+
+<meta content='aa2vrdtq64dub8knuf83lwywit311w' name='facebook-domain-verification'>
+
+<link rel="stylesheet" href="https://cdn2.hexlet.io/packs/css/application-977e5896.css" media="all" />
+
+<script>
+//<![CDATA[
+window.gon={};gon.fired_events={};gon.is_bot=true;gon.applications={};gon.current_user={"id":null,"email":null,"sanitized_phone_number":"","username":null,"created_at":"2022-08-03T11:32:45.563Z","last_viewed_notification_id":null,"paid_days_count":0,"first_name":"","last_name":"","full_name":"","birthday":null,"city":null,"text":" ()","is_guest":true,"is_mentor":false,"is_tutor":false,"is_hexlet_employee":false,"current_company":null,"can_use_paid_features":false,"current_program":null,"is_active_group_member":false};gon.token="o1tysCmIF8M9Y4OrR9kjXQX_nlM5VnLq9we9K4y2zS1SxDnHIFZsSWjUZWndoLvJbUqNI6VNjkkPhi-XL355Ng";gon.events=["blog_post_moderation_submitted","code_review_created","company_balance_recounted","company_created","company_updated","course_started","course_finished","exercise_started","lead_created","lesson_started","lesson_finished","lesson_unit_finished","product_payment_paid","program_started","program_finished","project_started","project_check_point_finished","project_sent_to_review","project_finished","registration_failed","show_lead_modal","signed_up","signed_up_program_started","solution_viewed","subscription_cancelled","subscription_deleted","subscription_created","subscription_paid","subscription_price_changed","subscription_product_changed","test","topic_created","topic_comment_created","tutor_assigned","tutorship_application_created","user_email_confirmed","user_email_changed","user_updated","test_event"];gon.disqus_name="hexletio";gon.locale="ru";gon.rails_env="production";gon.mobile=false;gon.google={"analytics_key":"UA-1360700-51","optimize_key":"GTM-5QDVFPF"};gon.recaptcha={"site_key_v3":"6LenGbgZAAAAAM7HbrDbn5JlizCSzPcS767c9vaY"};gon.social_signin=false;gon.typoreporter_google_form_id="1FAIpQLSeibfGq-KvWQ2Fyru-zkFFRVTLBuzXAHAoEyN1p49FtDmNoNA";
+//]]>
+</script>
+<script>
+  (function() {
+    const options = {
+      dsn: 'https://5e408926ab534fba9c66d8f620d1f58b@o1090356.ingest.sentry.io/6106229',
+      environment: 'production',
+      release: 'v7023',
+      initialScope: {
+        user: gon.current_user
+      },
+      ignoreErrors: [
+        'top.GLOBALS', // Random plugins/extensions
+        'VK is',
+        'VK.Retargeting is ',
+        "Can't find variable: VK",
+        'pktAnnotationHighlighter',
+        'amplitude',
+        'google_tag_manager',
+        'Unexpected keyword',
+        'illegal character',
+        'Unexpected identifier',
+        'Illegal invocation',
+        'missing = in const declaration',
+      ],
+      allowUrls: [/https?:\/\/((cdn|cdn2|ru)\.)?hexlet.io/],
+      beforeSend(event, hint) {
+        const stack = hint?.originalException?.stack || '';
+        const errorInitiator = stack
+          .split('\n')
+          .map((line) => line.trim())
+          .find((line) => line.startsWith('at'));
+        const causedByConsole = errorInitiator
+          ? errorInitiator.startsWith('at <anonymous>')
+          : false;
+        return causedByConsole ? null : event;
+      },
+    };
+    const key = options.dsn.replace('https://', '').split('@')[0];
+  
+    (function(c,u,v,n,p,e,z,A,w){function k(a){if(!x){x=!0;var l=u.getElementsByTagName(v)[0],d=u.createElement(v);d.src=A;d.crossOrigin="anonymous";d.addEventListener("load",function(){try{c[n]=r;c[p]=t;var b=c[e],d=b.init;b.init=function(a){for(var b in a)Object.prototype.hasOwnProperty.call(a,b)&&(w[b]=a[b]);d(w)};B(a,b)}catch(g){console.error(g)}});l.parentNode.insertBefore(d,l)}}function B(a,l){try{for(var d=m.data,b=0;b<a.length;b++)if("function"===typeof a[b])a[b]();var e=!1,g=c.__SENTRY__;"undefined"!== typeof g&&g.hub&&g.hub.getClient()&&(e=!0);g=!1;for(b=0;b<d.length;b++)if(d[b].f){g=!0;var f=d[b];!1===e&&"init"!==f.f&&l.init();e=!0;l[f.f].apply(l,f.a)}!1===e&&!1===g&&l.init();var h=c[n],k=c[p];for(b=0;b<d.length;b++)d[b].e&&h?h.apply(c,d[b].e):d[b].p&&k&&k.apply(c,[d[b].p])}catch(C){console.error(C)}}for(var f=!0,y=!1,q=0;q<document.scripts.length;q++)if(-1<document.scripts[q].src.indexOf(z)){f="no"!==document.scripts[q].getAttribute("data-lazy");break}var x=!1,h=[],m=function(a){(a.e||a.p||a.f&& -1<a.f.indexOf("capture")||a.f&&-1<a.f.indexOf("showReportDialog"))&&f&&k(h);m.data.push(a)};m.data=[];c[e]=c[e]||{};c[e].onLoad=function(a){h.push(a);f&&!y||k(h)};c[e].forceLoad=function(){y=!0;f&&setTimeout(function(){k(h)})};"init addBreadcrumb captureMessage captureException captureEvent configureScope withScope showReportDialog".split(" ").forEach(function(a){c[e][a]=function(){m({f:a,a:arguments})}});var r=c[n];c[n]=function(a,e,d,b,f){m({e:[].slice.call(arguments)});r&&r.apply(c,arguments)}; var t=c[p];c[p]=function(a){m({p:a.reason});t&&t.apply(c,arguments)};f||setTimeout(function(){k(h)})})(window,document,"script","onerror","onunhandledrejection","Sentry",key,"https://browser.sentry-cdn.com/6.17.4/bundle.min.js",options);
+  
+  })();
+</script>
+
+<script>
+  window.EventsMapping = {
+    on: function(eventName, callback) {
+      if (gon.events.indexOf(eventName) === -1) {
+        throw new Error('Undefined event name ' + eventName + '. Check gon.events.');
+      }
+  
+      if (!gon.fired_events.hasOwnProperty(eventName)) {
+        return;
+      }
+      var options = gon.fired_events[eventName];
+  
+      callback(eventName, options);
+    }
+  };
+  
+  // for custom scroll trigger in gtm
+  var onceScrollHandler = function () {
+    var events = window.dataLayer || [];
+    events.push({event: 'real_first_scroll'});
+    window.removeEventListener('scroll', onceScrollHandler, false);
+  };
+  window.addEventListener('scroll', onceScrollHandler);
+  
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WK88TH');
+</script>
+
+<script>
+  !function(){
+    var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://collect-analytics.hexlet.io/analytics/" + key + "/analytics.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.13.1";
+  
+    analytics.load("45dec37f43fa49e392061da423f072ca");
+    analytics.page();
+  
+    if (gon.current_user.id) {
+      var user = gon.current_user;
+  
+      analytics.identify(user.id.toString(), {
+        email: user.email,
+        first_name: user.first_name,
+        last_name: user.last_name,
+        public_name: user.public_name,
+        city: user.city,
+        birthday: user.birthday,
+        sanitized_phone_number: user.sanitized_phone_number,
+        locale: user.locale,
+        url: user.url
+      });
+    }
+  }}();
+</script>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Hexlet","url":"https://hexlet.io","sameAs":["https://www.facebook.com/Hexlet","https://www.youtube.com/user/HexletUniversity","https://twitter.com/HexletHQ","https://soundcloud.com/hexlet"],"legalName":"Hexlet Ltd.","address":"Itälahdenkatu 22 A, 00210 Helsinki, Finland","vatID":"VAT ID: FI26641607","telephone":"+7 495 085 28 38","logo":{"@type":"ImageObject","url":"https://cdn2.hexlet.io/assets/hexlet_logo-4e7b643fd7cbe42da81624aba2faa9267523b2b925d5b576536e05d061659083.png"}}</script>
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://ru.hexlet.io/lessons.rss" />
+<meta content='website' property='og:type'>
+<meta content='Курс «Python ООП»: введение в ооп на языке питон для начинающих' property='og:title'>
+<meta content='https://ru.hexlet.io/courses/python-oop-basics' property='og:url'>
+<link href='https://ru.hexlet.io/courses/python-oop-basics' rel='canonical'>
+<meta content='https://cdn2.hexlet.io/assets/fallback/course-4d9fa44ee300b9f5601f72e1a3673dda8a276575aba7cf6a225a7b25cb5cf685.png' property='og:image'>
+<link href='https://cdn2.hexlet.io/assets/fallback/course-4d9fa44ee300b9f5601f72e1a3673dda8a276575aba7cf6a225a7b25cb5cf685.png' rel='image_src'>
+<meta content='Python: Введение в ООП: Python - мультипарадигменный язык с поддержкой объектно-ориентированного программирования. В этом курсе начинается знакомство с основными понятиями и синтаксическими конструкциями, присущими ООП. Рассматриваются инкапсуляция и сокрытие данных. Разбираются особенности поведения self, изучаются связывание и исключения.' property='og:description'>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"Python: Введение в ООП","description":"Python - мультипарадигменный язык с поддержкой объектно-ориентированного программирования. В этом курсе начинается знакомство с основными понятиями и синтаксическими конструкциями, присущими ООП. Рассматриваются инкапсуляция и сокрытие данных. Разбираются особенности поведения self, изучаются связывание и исключения.","accessMode":"textOnVisual","commentCount":192,"url":"https://ru.hexlet.io/courses/python-oop-basics","image":"https://cdn2.hexlet.io/assets/fallback/course-4d9fa44ee300b9f5601f72e1a3673dda8a276575aba7cf6a225a7b25cb5cf685.png","isAccessibleForFree":false,"provider":{"@context":"https://schema.org","@type":"Organization","name":"Hexlet","url":"https://hexlet.io","sameAs":["https://www.facebook.com/Hexlet","https://www.youtube.com/user/HexletUniversity","https://twitter.com/HexletHQ","https://soundcloud.com/hexlet"],"legalName":"Hexlet Ltd.","address":"Itälahdenkatu 22 A, 00210 Helsinki, Finland","vatID":"VAT ID: FI26641607","telephone":"+7 495 085 28 38","logo":{"@type":"ImageObject","url":"https://cdn2.hexlet.io/assets/hexlet_logo-4e7b643fd7cbe42da81624aba2faa9267523b2b925d5b576536e05d061659083.png"}}}</script>
+
+</head>
+<body class='min-vh-100'>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK88TH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<div class='container'>
+<header class='navbar navbar-light navbar-expand-lg border-bottom align-items-center py-lg-3 mb-4'>
+<a aria-hidden='true' class='navbar-brand link-dark pt-lg-0 pb-lg-2' href='/'>
+<img width="100" alt="Хекслет" src="https://cdn2.hexlet.io/assets/logo_ru-495f05850e0095ea722a2b583565d492719579c02b0ce61d924e4f895fabf781.svg" loading="lazy" />
+</a>
+<button aria-controls='navbar-responsive' aria-expanded='false' aria-label='Меню' class='navbar-toggler border-0' data-bs-target='#navbar-responsive' data-bs-toggle='collapse'>
+<span class='navbar-toggler-icon'></span>
+</button>
+<div class='navbar-collapse collapse' id='navbar-responsive'>
+<ul class='navbar-nav algin-items-start me-auto'>
+<li><a class="nav-link px-lg-3" href="/programs">Программы обучения</a></li>
+<li><a class="nav-link px-lg-3" href="/webinars">Бесплатно</a></li>
+<li><a class="nav-link px-lg-3" href="/teams">Компаниям</a></li>
+</ul>
+<div class='col-auto text-lg-end py-2 py-lg-0'>
+<a class="btn btn-outline-secondary me-2" href="https://ru.hexlet.io/session/new?from=https%3A%2F%2Fru.hexlet.io%2Fcourses%2Fpython-oop-basics">Вход</a>
+<a class="btn btn-outline-secondary" href="/u/new?from=https%3A%2F%2Fru.hexlet.io%2Fcourses%2Fpython-oop-basics">Регистрация</a>
+</div>
+</div>
+</header>
+</div>
+<div class='container'>
+
+
+</div>
+
+<main class='mb-5'>
+<div class='bg-dark mb-4 py-4 py-lg-5'>
+<div class='container-xl py-lg-2'>
+<div class='row'>
+<div class='col-md-7 col-lg-8 text-white'>
+курс
+<h1>
+Python: Введение в ООП
+</h1>
+<div class='mb-2'>
+<span class='me-3 text-nowrap'>
+923 студента
+</span>
+<span class='text-nowrap'>
+<a class="text-light" href="/my/topics?q%5Bcommunitable_of_Lesson_type_course_id_eq%5D=202&amp;q%5Bcommunitable_type_eq%5D=Lesson">192 сообщения</a>
+</span>
+</div>
+<div class='small'>
+<span class='far fa-user-edit fa-fw'></span>
+<span>Последнее обновление:</span>
+<span class='d-inline-block'>01 июля 2022</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='container-xl'>
+<div class='row'>
+<div class='col-12 col-md-5 col-lg-4 mb-4 mb-md-0 order-md-1'>
+<div class='h-100'>
+<div class='position-sticky pt-2 hexlet-course-sidebar'>
+<div class='card shadow-sm border-0'>
+<div class='d-none d-md-block'>
+<picture><source type="image/webp" srcset="https://cdn2.hexlet.io/assets/fallback/course-4d9fa44ee300b9f5601f72e1a3673dda8a276575aba7cf6a225a7b25cb5cf685.png"><source type="image/png" srcset="https://cdn2.hexlet.io/assets/fallback/course-4d9fa44ee300b9f5601f72e1a3673dda8a276575aba7cf6a225a7b25cb5cf685.png"><img width="600" height="400" class="card-img-top" alt="Курс Python: Введение в ООП" src="https://cdn2.hexlet.io/assets/fallback/course-4d9fa44ee300b9f5601f72e1a3673dda8a276575aba7cf6a225a7b25cb5cf685.png" loading="lazy" /></picture>
+</div>
+<div class='card-body'>
+<div class='mb-3'>
+<span class='h2 fw-bold mb-0'>3 900 ₽</span>
+в месяц
+<div class='d-block'>за все курсы Хекслета</div>
+</div>
+<a class="btn btn-primary w-100 btn-lg" href="/u/new?from=https%3A%2F%2Fru.hexlet.io%2Fcourses%2Fpython-oop-basics">Зарегистрироваться</a>
+<ul class='mt-4 mb-1 list-unstyled'>
+<li class='mb-2 d-flex'>
+<div class='far fa-fw fa-laptop-code flex-shrink-0 me-2 mt-1'></div>
+Тренажер с практикой
+</li>
+<li class='mb-2 d-flex'>
+<div class='far fa-fw fa-check-square flex-shrink-0 me-2 mt-1'></div>
+<div class='me-1'>Бессрочный доступ к теории</div>
+<button class='btn btn-link link-dark lh-1 p-0 x-btn-no-active-decor' data-bs-toggle='tooltip' title='Доступ к теории сохранится навсегда при условии, что урок пройден полностью, с упражнениями и тестами, если они есть'>
+<span class='fal fa-question-circle'></span>
+</button>
+</li>
+<li class='mb-0 d-flex'>
+<div class='far fa-fw fa-user-clock flex-shrink-0 me-2 mt-1'></div>
+<div class='me-1'>Асинхронный формат обучения</div>
+<button class='btn btn-link link-dark lh-1 p-0 x-btn-no-active-decor' data-bs-toggle='tooltip' title='Учитесь в своём темпе. Проходите курс быстрее или замедляйтесь, чтобы разобраться в деталях'>
+<span class='fal fa-question-circle'></span>
+</button>
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+<div class='col-12 col-md-7 col-lg-8'>
+<h2 class='h3 mb-4'>Включено в курс</h2>
+<div class='row row-cols-1 row-cols-sm-2 row-cols-md-1 row-cols-lg-2'>
+<div class='col mb-2 d-flex'>
+<span class='far fa-check mt-1 me-2 flex-shrink-0'></span>
+10 уроков (видео и/или текст)
+
+</div>
+<div class='col mb-2 d-flex'>
+<span class='far fa-check mt-1 me-2 flex-shrink-0'></span>
+13 упражнений в тренажере
+
+</div>
+<div class='col mb-2 d-flex'>
+<span class='far fa-check mt-1 me-2 flex-shrink-0'></span>
+33 проверочных теста
+
+</div>
+<div class='col mb-2 d-flex'>
+<span class='far fa-check mt-1 me-2 flex-shrink-0'></span>
+<a class="text-decoration-none link-dark" href="#extra-materials">Дополнительные материалы</a>
+</div>
+<div class='col mb-2 d-flex'>
+<span class='far fa-check mt-1 me-2 flex-shrink-0'></span>
+<div>
+<span class='me-1'>Помощь в «<a href=https://help.hexlet.io/ru/articles/110020-kak-zadat-vopros-po-uroku class="link-dark" target="_blank">Обсуждениях</a>»
+</span>
+</div>
+</div>
+<div class='col mb-2 d-flex'>
+<span class='far fa-plus mt-1 me-2 flex-shrink-0'></span>
+Доступ к остальным курсам платформы
+</div>
+</div>
+<h2 class='h3 mt-5 mb-4'>Чему вы научитесь</h2>
+<ul>
+<li>Грамотно использовать контекст self в зависимости от ситуации</li>
+<li>Описывать сущности предметной области с помощью объектов и классов</li>
+<li>Понимать как работают объекты в Python на самом низком уровне</li>
+<li>Использовать исключения в своем коде</li>
+</ul>
+<h2 class='h3 mt-5 mb-4'>Описание</h2>
+<p>Python - мультипарадигменный язык с поддержкой объектно-ориентированного программирования. В этом курсе начинается знакомство с основными понятиями и синтаксическими конструкциями, присущими ООП. Рассматриваются инкапсуляция и сокрытие данных. Разбираются особенности поведения self, изучаются связывание и исключения.</p>
+<div class='mb-2'>
+<a class="badge bg-info border-0 text-decoration-none" href="/lesson_filters/svyazyvanie">связывание</a>
+<a class="badge bg-info border-0 text-decoration-none" href="/lesson_filters/inkapsulyatsiya">инкапсуляция</a>
+<a class="badge bg-info border-0 text-decoration-none" href="/lesson_filters/konstruktor">конструктор</a>
+<a class="badge bg-info border-0 text-decoration-none" href="/lesson_filters/klassy">классы</a>
+<a class="badge bg-info border-0 text-decoration-none" href="/lesson_filters/isklyucheniya">исключения</a>
+</div>
+<h2 class='h3 mt-5 mb-4'>Уроки курса</h2>
+<div class='mb-2 text-muted'>
+Продолжительность 12 часов
+<a class='text-decoration-none text-muted' data-bs-content='Продолжительность считается приблизительно по формуле: теория урока 30 минут + 2 часа на практику. Реальная длительность очень сильно варьируется от подготовки и того, как человек взаимодействует с платформой, задает ли вопросы или пользуется помощью наставника
+' data-bs-title='Подсчет времени' data-bs-toggle='popover' data-bs-trigger='hover' href='#'>
+<span class='far fa-question-circle'></span>
+</a>
+</div>
+<ul class='list-group'>
+<li class='list-group-item'>
+<div class='row my-2'>
+<div class='col-1 text-center'>
+<div class='h3 fw-light'>1</div>
+</div>
+<div class='col'>
+<h3 class='h5'>
+<a class="text-decoration-none link-dark me-2" href="/courses/python-oop-basics/lessons/intro/theory_unit">Сложность и абстракция</a>
+</h3>
+<div class='mt-3 text-muted'>Узнать о зарождении концепции ООП, познакомиться с концепциями абстракции и управления сложностью.</div>
+</div>
+<div class='w-100 d-lg-none'></div>
+<div class='col-1 d-lg-none'></div>
+<div class='col col-lg-auto d-flex flex-lg-column flex-wrap flex-lg-nowrap align-items-lg-end justify-content-lg-center mt-2 mt-lg-0'>
+<div class='small me-2 me-lg-0'>
+<a class="text-decoration-none link-dark" href="/courses/python-oop-basics/lessons/intro/theory_unit">теория</a>
+</div>
+
+</div>
+</div>
+</li>
+<li class='list-group-item'>
+<div class='row my-2'>
+<div class='col-1 text-center'>
+<div class='h3 fw-light'>2</div>
+</div>
+<div class='col'>
+<h3 class='h5'>
+<a class="text-decoration-none link-dark me-2" href="/courses/python-oop-basics/lessons/oop-conceptions/theory_unit">Концепции ООП</a>
+</h3>
+<div class='mt-3 text-muted'>Познакомиться с основными концепциями ООП: классами, объектами, наследованием, инкапсуляцией, полиморфизмом.</div>
+</div>
+<div class='w-100 d-lg-none'></div>
+<div class='col-1 d-lg-none'></div>
+<div class='col col-lg-auto d-flex flex-lg-column flex-wrap flex-lg-nowrap align-items-lg-end justify-content-lg-center mt-2 mt-lg-0'>
+<div class='small me-2 me-lg-0'>
+<a class="text-decoration-none link-dark" href="/courses/python-oop-basics/lessons/oop-conceptions/theory_unit">теория</a>
+</div>
+
+<div class='small me-2 me-lg-0'>
+<a class="text-decoration-none link-dark" href="/courses/python-oop-basics/lessons/oop-conceptions/quiz_unit">тесты</a>
+</div>
+
+</div>
+</div>
+</li>
+<li class='list-group-item'>
+<div class='row my-2'>
+<div class='col-1 text-center'>
+<div class='h3 fw-light'>3</div>
+</div>
+<div class='col'>
+<h3 class='h5'>
+<a class="text-decoration-none link-dark me-2" href="/courses/python-oop-basics/lessons/classes/theory_unit">Классы, пространства имён, атрибуты</a>
+</h3>
+<div class='mt-3 text-muted'>Познакомиться с концепцией классов и синтаксисом описания классов и их атрибутов.</div>
+</div>
+<div class='w-100 d-lg-none'></div>
+<div class='col-1 d-lg-none'></div>
+<div class='col col-lg-auto d-flex flex-lg-column flex-wrap flex-lg-nowrap align-items-lg-end justify-content-lg-center mt-2 mt-lg-0'>
+<div class='small me-2 me-lg-0'>
+<a class="text-decoration-none link-dark" href="/courses/python-oop-basics/lessons/classes/theory_unit">теория</a>
+</div>
+
+<div class='small me-2 me-lg-0'>
+<a class="text-decoration-none link-dark" href="/courses/python-oop-basics/lessons/classes/quiz_unit">тесты</a>
+</div>
+
+<div class='small me-2 me-lg-0'>
+<a class="text-decoration-none link-dark" href="/courses/python-oop-basics/lessons/classes/exercise_unit">упражнение</a>
+</div>
+
+</div>
+</div>
+</li>
+<li class='list-group-item'>
+<div class='row my-2'>
+<div class='col-1 text-center'>
+<div class='h3 fw-light'>4</div>
+</div>
+<div class='col'>
+<h3 class='h5'>
+<a class="text-decoration-none link-dark me-2" href="/courses/python-oop-basics/lessons/singletones/theory_unit">Объекты-одиночки и глобальные переменные</a>
+</h3>
+<div class='mt-3 text-muted'>Узнать, почему не стоит модифицировать классы после объявления или держать в их атрибутах изменяемые объекты, а также как это относится к модулям.</div>
+</div>
+<div class='w-100 d-lg-none'></div>
+<div class='col-1 d-lg-none'></div>
+<div class='col col-lg-auto d-flex flex-lg-column flex-wrap flex-lg-nowrap align-items-lg-end justify-content-lg-center mt-2 mt-lg-0'>
+<div class='small me-2 me-lg-0'>
+<a class="text-decoration-none link-dark" href="/courses/python-oop-basics/lessons/singletones/theory_unit">теория</a>
+</div>
+
+<div class='small me-2 me-lg-0'>
+<a class="text-decoration-none link-dark" href="/courses/python-oop-basics/lessons/singletones/quiz_unit">тесты</a>
+</div>
+
+<div class='small me-2 me-lg-0'>
+<a class="text-decoration-none link-dark" href="/courses/python-oop-basics/lessons/singletones/exercise_unit">упражнение</a>
+</div>
+
+</div>
+</div>
+</li>
+<li class='list-group-item'>
+<div class='row my-2'>
+<div class='col-1 text-center'>
+<div class='h3 fw-light'>5</div>
+</div>
+<div class='col'>
+<h3 class='h5'>
+<a class="text-decoration-none link-dark me-2" href="/courses/python-oop-basics/lessons/instances/theory_unit">Инстанциирование классов и экземпляры</a>
+</h3>
+<div class='mt-3 text-muted'>Узнать, как создаются экземпляры классов, как они зависят от самого класса и что, напротив, имеют своего.</div>
+</div>
+<div class='w-100 d-lg-none'></div>
+<div class='col-1 d-lg-none'></div>
+<div class='col col-lg-auto d-flex flex-lg-column flex-wrap flex-lg-nowrap align-items-lg-end justify-content-lg-center mt-2 mt-lg-0'>
+<div class='small me-2 me-lg-0'>
+<a class="text-decoration-none link-dark" href="/courses/python-oop-basics/lessons/instances/theory_unit">теория</a>
+</div>
+
+<div class='small me-2 me-lg-0'>
+<a class="text-decoration-none link-dark" href="/courses/python-oop-basics/lessons/instances/quiz_unit">тесты</a>
+</div>
+
+<div class='small me-2 me-lg-0'>
+<a class="text-decoration-none link-dark" href="/courses/python-oop-basics/lessons/instances/exercise_unit">упражнение</a>
+</div>
+
+</div>
+</div>
+</li>
+<li class='list-group-item'>
+<div class='row my-2'>
+<div class='col-1 text-center'>
+<div class='h3 fw-light'>6</div>
+</div>
+<div class='col'>
+<h3 class='h5'>
+<a class="text-decoration-none link-dark me-2" href="/courses/python-oop-basics/lessons/methods/theory_unit">Методы</a>
+</h3>
+<div class='mt-3 text-muted'>Познакомиться с синтаксисом описания методов, концепцией связанности метода и объекта. Научиться вызывать как связанные методы, так и не связанные.</div>
+</div>
+<div class='w-100 d-lg-none'></div>
+<div class='col-1 d-lg-none'></div>
+<div class='col col-lg-auto d-flex flex-lg-column flex-wrap flex-lg-nowrap align-items-lg-end justify-content-lg-center mt-2 mt-lg-0'>
+<div class='small me-2 me-lg-0'>
+<a class="text-decoration-none link-dark" href="/courses/python-oop-basics/lessons/methods/theory_unit">теория</a>
+</div>
+
+<div class='small me-2 me-lg-0'>
+<a class="text-decoration-none link-dark" href="/courses/python-oop-basics/lessons/methods/quiz_unit">тесты</a>
+</div>
+
+<div class='small me-2 me-lg-0'>
+<a class="text-decoration-none link-dark" href="/courses/python-oop-basics/lessons/methods/exercise_unit">упражнение</a>
+</div>
+
+</div>
+</div>
+</li>
+<li class='list-group-item'>
+<div class='row my-2'>
+<div class='col-1 text-center'>
+<div class='h3 fw-light'>7</div>
+</div>
+<div class='col'>
+<h3 class='h5'>
+<a class="text-decoration-none link-dark me-2" href="/courses/python-oop-basics/lessons/initialization/theory_unit">Инициализация и протоколы</a>
+</h3>
+<div class='mt-3 text-muted'>Узнать, как настраивать вновь созданные объекты. Познакомиться с понятием протоколов.</div>
+</div>
+<div class='w-100 d-lg-none'></div>
+<div class='col-1 d-lg-none'></div>
+<div class='col col-lg-auto d-flex flex-lg-column flex-wrap flex-lg-nowrap align-items-lg-end justify-content-lg-center mt-2 mt-lg-0'>
+<div class='small me-2 me-lg-0'>
+<a class="text-decoration-none link-dark" href="/courses/python-oop-basics/lessons/initialization/theory_unit">теория</a>
+</div>
+
+<div class='small me-2 me-lg-0'>
+<a class="text-decoration-none link-dark" href="/courses/python-oop-basics/lessons/initialization/quiz_unit">тесты</a>
+</div>
+
+<div class='small me-2 me-lg-0'>
+<a class="text-decoration-none link-dark" href="/courses/python-oop-basics/lessons/initialization/exercise_unit">упражнение</a>
+</div>
+
+</div>
+</div>
+</li>
+<li class='list-group-item'>
+<div class='row my-2'>
+<div class='col-1 text-center'>
+<div class='h3 fw-light'>8</div>
+</div>
+<div class='col'>
+<h3 class='h5'>
+<a class="text-decoration-none link-dark me-2" href="/courses/python-oop-basics/lessons/properties/theory_unit">Свойства</a>
+</h3>
+<div class='mt-3 text-muted'>Узнать, как объявить &quot;свойство&quot; — атрибут класса, вычисляемый динамически. Научиться управлять изменением свойств.</div>
+</div>
+<div class='w-100 d-lg-none'></div>
+<div class='col-1 d-lg-none'></div>
+<div class='col col-lg-auto d-flex flex-lg-column flex-wrap flex-lg-nowrap align-items-lg-end justify-content-lg-center mt-2 mt-lg-0'>
+<div class='small me-2 me-lg-0'>
+<a class="text-decoration-none link-dark" href="/courses/python-oop-basics/lessons/properties/theory_unit">теория</a>
+</div>
+
+<div class='small me-2 me-lg-0'>
+<a class="text-decoration-none link-dark" href="/courses/python-oop-basics/lessons/properties/quiz_unit">тесты</a>
+</div>
+
+<div class='small me-2 me-lg-0'>
+<a class="text-decoration-none link-dark" href="/courses/python-oop-basics/lessons/properties/exercise_unit">упражнение</a>
+</div>
+
+</div>
+</div>
+</li>
+<li class='list-group-item'>
+<div class='row my-2'>
+<div class='col-1 text-center'>
+<div class='h3 fw-light'>9</div>
+</div>
+<div class='col'>
+<h3 class='h5'>
+<a class="text-decoration-none link-dark me-2" href="/courses/python-oop-basics/lessons/inheritance/theory_unit">Наследование</a>
+</h3>
+<div class='mt-3 text-muted'>Познакомиться с механизмом наследования классов в Python. Узнать о том, как наследование помогает повторно использовать объектный код.</div>
+</div>
+<div class='w-100 d-lg-none'></div>
+<div class='col-1 d-lg-none'></div>
+<div class='col col-lg-auto d-flex flex-lg-column flex-wrap flex-lg-nowrap align-items-lg-end justify-content-lg-center mt-2 mt-lg-0'>
+<div class='small me-2 me-lg-0'>
+<a class="text-decoration-none link-dark" href="/courses/python-oop-basics/lessons/inheritance/theory_unit">теория</a>
+</div>
+
+<div class='small me-2 me-lg-0'>
+<a class="text-decoration-none link-dark" href="/courses/python-oop-basics/lessons/inheritance/quiz_unit">тесты</a>
+</div>
+
+<div class='small me-2 me-lg-0'>
+<a class="text-decoration-none link-dark" href="/courses/python-oop-basics/lessons/inheritance/exercise_unit">упражнение</a>
+</div>
+
+</div>
+</div>
+</li>
+<li class='list-group-item'>
+<div class='row my-2'>
+<div class='col-1 text-center'>
+<div class='h3 fw-light'>10</div>
+</div>
+<div class='col'>
+<h3 class='h5'>
+<a class="text-decoration-none link-dark me-2" href="/courses/python-oop-basics/lessons/exceptions/theory_unit">Исключения</a>
+</h3>
+<div class='mt-3 text-muted'>Познакомиться с исключениями — важным механизмом языка Python, предназначенными для работы с ошибками и широко использующим наследование классов.</div>
+</div>
+<div class='w-100 d-lg-none'></div>
+<div class='col-1 d-lg-none'></div>
+<div class='col col-lg-auto d-flex flex-lg-column flex-wrap flex-lg-nowrap align-items-lg-end justify-content-lg-center mt-2 mt-lg-0'>
+<div class='small me-2 me-lg-0'>
+<a class="text-decoration-none link-dark" href="/courses/python-oop-basics/lessons/exceptions/theory_unit">теория</a>
+</div>
+
+<div class='small me-2 me-lg-0'>
+<a class="text-decoration-none link-dark" href="/courses/python-oop-basics/lessons/exceptions/quiz_unit">тесты</a>
+</div>
+
+<div class='small me-2 me-lg-0'>
+<a class="text-decoration-none link-dark" href="/courses/python-oop-basics/lessons/exceptions/exercise_unit">упражнение</a>
+</div>
+
+</div>
+</div>
+</li>
+<li class='list-group-item' id='extra-materials'>
+<div class='row my-2'>
+<div class='col-1 text-center'>
+<div class='h3 fw-light'>11</div>
+</div>
+<div class='col'>
+<h3 class='h5'>
+Дополнительные материалы
+</h3>
+<div class='mt-3 text-muted'>Статьи и видео, подобранные командой Хекслета. Помогут глубже погрузиться в тему курса
+</div>
+</div>
+</div>
+</li>
+</ul>
+<h2 class='h3 mt-5 mb-4'>Формат обучения</h2>
+<video autoplay class='w-100 shadow' loop muted playsinline='' src='https://cdn2.hexlet.io/assets/how_to_study_on_hexlet-ad2196109ff0ac7107981614e217f2eaacd03cc5ee6d68c39809b5d5f3240106.mp4'></video>
+<h2 class='h3 mt-5 mb-4' id='challenges'>Испытания</h2>
+<p class='text-muted'>Это практические задания, которые мы советуем выполнить после завершения  курса. Задания помогут вам получить дополнительный опыт в программировании и закрепить полученные навыки. Обычно мы рекомендуем выполнить 3-5 испытаний. Но если не получается, не отчаивайтесь. Просто вернитесь к ним позже</p>
+<div class='row g-0 py-2 border-bottom fw-bold'>
+<div class='col-1 mx-2'>#</div>
+<div class='col'>Задание</div>
+<div class='col-auto mx-2 text-end'>%&nbsp;завершений</div>
+</div>
+<div class='row g-0 py-2 border-bottom'>
+<div class='col-1 mx-2'>1</div>
+<div class='col'>
+<a class="text-decoration-none link-dark" href="/challenges/python_oop_basics_tree_builder_exercise">Построитель деревьев</a>
+</div>
+<div class='col-auto mx-2 text-end'>
+60%
+</div>
+</div>
+
+<div class='row g-0 py-2 border-bottom'>
+<div class='col-1 mx-2'>2</div>
+<div class='col'>
+<a class="text-decoration-none link-dark" href="/challenges/python_oop_basics_multikey_dictionary_exercise">Словарь с псевдонимами</a>
+</div>
+<div class='col-auto mx-2 text-end'>
+83%
+</div>
+</div>
+
+<div class='row g-0 py-2 border-bottom'>
+<div class='col-1 mx-2'>3</div>
+<div class='col'>
+<a class="text-decoration-none link-dark" href="/challenges/python_oop_basics_binary_tree_search_exercise">Поиск в двоичном дереве</a>
+</div>
+<div class='col-auto mx-2 text-end'>
+86%
+</div>
+</div>
+
+<div class='row g-0 py-2 border-bottom'>
+<div class='col-1 mx-2'>4</div>
+<div class='col'>
+<a class="text-decoration-none link-dark" href="/challenges/python_oop_basics_binary_tree_build_exercise">Построение двоичного дерева</a>
+</div>
+<div class='col-auto mx-2 text-end'>
+85%
+</div>
+</div>
+
+<div class='row g-0 py-2 border-bottom'>
+<div class='col-1 mx-2'>5</div>
+<div class='col'>
+<a class="text-decoration-none link-dark" href="/challenges/python_oop_basics_binary_tree_aggreagtion_exercise">Агрегация в двоичном дереве</a>
+</div>
+<div class='col-auto mx-2 text-end'>
+73%
+</div>
+</div>
+
+<h2 class='h3 mt-5 mb-4' id='impressions'>
+<a class="text-decoration-none link-dark" href="/my/topics?q%5Bcommunitable_of_Lesson_type_course_id_eq%5D=202&amp;q%5Bkind_eq%5D=gratitude&amp;q%5Bs%5D%5B%5D=useful+desc&amp;q%5Bs%5D%5B%5D=id+desc">Впечатления</a>
+</h2>
+<div class='my-4 d-flex'>
+<a class="text-decoration-none flex-shrink-0 me-3 rounded-circle" href="/u/user-b82eced3ec3dabd2"><picture><source type="image/webp" srcset="https://cdn2.hexlet.io/derivations/image/fill_webp/45/45/eyJpZCI6ImQ4NzU3NzU2YmQ3M2UzMDkxOTQ1MDYwM2Y3MjhlYjMxLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=ada122c4220861a2fd388970091c2e69065ce30b0d273485e89de551a264871f"><source type="image/png" srcset="https://cdn2.hexlet.io/derivations/image/fill_png/45/45/eyJpZCI6ImQ4NzU3NzU2YmQ3M2UzMDkxOTQ1MDYwM2Y3MjhlYjMxLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=3bd48f139003abf6170e2e83f5de41b79a4a629d9d73885da8e93ca42495967b"><img width="45" height="45" class="rounded-circle" alt="Аватар пользователя Savelii Stepura" src="https://cdn2.hexlet.io/assets/team/you-bc72575a0e6eb39de3e28e54a8df1138beaa57cd5300061ecb5c202773131f9e.jpg" loading="lazy" /></picture>
+</a><div class='d-flex flex-column align-items-start'>
+<a class="text-decoration-none" href="/u/user-b82eced3ec3dabd2">Savelii Stepura</a>
+<a class="text-muted text-decoration-none small" href="https://ru.hexlet.io/topics/42758">15 мая 2020
+</a><div class='mt-3 hexlet-markdown-body'>
+<p>Хекслет))) ну вот сложные вы задания даете конечно)))</p><p>Из всего курса ООП только первые два практических задания седлал - остальное просто мозги сломать можно)</p>
+</div>
+</div>
+</div>
+<hr>
+<div class='my-4 d-flex'>
+<a class="text-decoration-none flex-shrink-0 me-3 rounded-circle" href="/u/che"><picture><source type="image/webp" srcset="https://cdn2.hexlet.io/derivations/image/fill_webp/45/45/eyJpZCI6IjZiMDJjZmZkNzEwYTk2NThkMTRkNWI4YjNlN2U3MTBlIiwic3RvcmFnZSI6InN0b3JlIn0?signature=dab8e22a783b2512ff7ed46d310bc6fc3500dd991edcfdbe09dfb840c6a254ad"><source type="image/png" srcset="https://cdn2.hexlet.io/derivations/image/fill_png/45/45/eyJpZCI6IjZiMDJjZmZkNzEwYTk2NThkMTRkNWI4YjNlN2U3MTBlIiwic3RvcmFnZSI6InN0b3JlIn0?signature=095a81585fe74c712d3a8cfed56d2772fea719b0427594fbeab9209da2a692f5"><img width="45" height="45" class="rounded-circle" alt="Аватар пользователя Petr Che" src="https://cdn2.hexlet.io/assets/team/you-bc72575a0e6eb39de3e28e54a8df1138beaa57cd5300061ecb5c202773131f9e.jpg" loading="lazy" /></picture>
+</a><div class='d-flex flex-column align-items-start'>
+<a class="text-decoration-none" href="/u/che">Petr Che</a>
+<a class="text-muted text-decoration-none small" href="https://ru.hexlet.io/topics/41062">13 апреля 2020
+</a><div class='mt-3 hexlet-markdown-body'>
+<p>Вопросов нет. </p><p>Просто хотел сказать, что пример очень интересный оказался (по крайней мере для меня)</p>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class='my-5'>
+<div class='h1 fw-light'>Рекомендуемые программы</div>
+<p class='lead fw-normal mb-5'>С нуля до разработчика. Возвращаем деньги, если не удалось найти работу.</p>
+<div class='row row-cols-1 row-cols-md-2'>
+<div class='col mb-4'>
+<div class='card shadow-sm x-shadow-fade-in h-100'>
+<div class='row h-100 g-0'>
+<div class='col-sm-5 col-md-12 col-lg-5 p-2 d-flex align-items-center justify-content-center'>
+<picture><source type="image/webp" srcset="https://cdn2.hexlet.io/derivations/image/fill_webp/540/320/eyJpZCI6Ijc0NGMxMDI5Njk5YjIxY2M1MzFiYjNlYjYyMWI1ZTUyLnBuZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=5971ec3da2d2145d55487fd0670d681fb9c8b5c1fbbc1ef250892ebd18caf107"><source type="image/png" srcset="https://cdn2.hexlet.io/derivations/image/fill_png/540/320/eyJpZCI6Ijc0NGMxMDI5Njk5YjIxY2M1MzFiYjNlYjYyMWI1ZTUyLnBuZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=e3b2615287bbf92f14efd8d8d6505e8dccb34bafc53ae041cf41c943de1ff489"><img width="540" height="320" class="img-fluid" alt="Иконка программы Python-разработчик" src="https://cdn2.hexlet.io/assets/professions/program-f26fba51e364abcd7f15475edb68d93958426d54c75468dc5bc65e493a586226.png" loading="lazy" /></picture>
+</div>
+<div class='col'>
+<div class='card-body d-flex flex-column h-100 ps-lg-2'>
+<div class='d-flex'>
+<div class='badge bg-light text-dark me-2'>Профессия</div>
+</div>
+<div class='h4 mt-2'><a class="stretched-link text-decoration-none link-dark" target="_blank" rel="noopener" href="/programs/python">Python-разработчик</a></div>
+<div class='small text-muted mb-3'>Разработка веб-приложений на Django</div>
+<div class='mt-auto text-muted'>
+<span class='me-2 text-nowrap'>
+<span class='fal fa-calendar-alt fa-fw me-1'></span>
+4 августа
+</span>
+<span class='text-nowrap'>
+<span class='far fa-clock fa-fw me-1'></span>
+10 месяцев
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</main>
+<footer class='bg-light border-top py-4 mt-auto'>
+<div class='container'>
+<div class='row gy-2 row-cols-1 row-cols-sm-2 row-cols-md-3 row pt-3'>
+<div class='col'>
+<ul class='nav flex-column align-items-start'>
+<li>
+<a class="nav-link py-1 text-muted px-0 pt-0" href="/pages/about">О нас</a>
+</li>
+<li>
+<a class="nav-link py-1 text-muted px-0" target="_blank" rel="noopener noreferrer nofollow" href="https://notion.so/c6406ed8890747e690d32b050faf42c2">Карьера в Хекслете</a>
+</li>
+<li>
+<a class="nav-link py-1 text-muted px-0" rel="noopener noreferrer nofollow" href="https://hexlet.printdirect.ru/?partner_id=615497">Магазин мерча</a>
+</li>
+</ul>
+<div class='fw-bold mt-3 mb-2'>Документы</div>
+<ul class='nav flex-column align-items-start'>
+<li>
+<a class="nav-link py-1 text-muted px-0" href="/pages/tos">Условия использования</a>
+</li>
+<li>
+<a class="nav-link py-1 text-muted px-0" href="/pages/privacy">Политика конфиденциальности</a>
+</li>
+<li>
+<a class="nav-link py-1 text-muted px-0" href="/pages/offer">Публичная оферта</a>
+</li>
+<li>
+<a class="nav-link py-1 text-muted px-0" href="/pages/promo">Акции</a>
+</li>
+</ul>
+<ul class='nav flex-column align-items-start mt-3'>
+<li>
+<span class='lead fw-normal'>
+<a class="text-muted text-decoration-none" href="tel:8%20800%20100%2022%2047">8 800 100 22 47</a>
+</span>
+<span class='text-muted'>бесплатно по РФ</span>
+</li>
+<li>
+<span class='lead fw-normal'>
+<a class="text-muted text-decoration-none" href="tel:%2B7%20495%20085%2028%2038">+7 495 085 28 38</a>
+</span>
+<span class='text-muted'>бесплатно по Москве</span>
+</li>
+</ul>
+<p class='mt-3 text-muted'>
+<span class='d-block'>ООО «Хекслет Рус»</span>
+<span class='d-block'>432071, г. Ульяновск,</span>
+<span class='d-block'>пр-т Нариманова, дом 1Г, оф. 23</span>
+<span class='d-block'>ОГРН 1217300010476</span>
+</p>
+</div>
+<div class='col'>
+<div class='fw-bold mb-2'>Учиться</div>
+<ul class='nav flex-column align-items-start'>
+<li>
+<a class="nav-link py-1 text-muted px-0" href="/programs">Профессии с нуля</a>
+</li>
+<li>
+<a class="nav-link py-1 text-muted px-0" href="/courses">Все курсы</a>
+</li>
+<li>
+<a class="nav-link py-1 text-muted px-0" target="_blank" rel="noopener noreferrer" href="https://premium.hexlet.io">Индивидуальное обучение</a>
+</li>
+<li>
+<a class="nav-link py-1 text-muted px-0" href="/teams">Корпоративное обучение</a>
+</li>
+</ul>
+<div class='fw-bold mt-3 mb-2'>Читать</div>
+<ul class='nav flex-column align-items-start'>
+<li>
+<a class="nav-link py-1 text-muted px-0" href="/blog/categories/success">Истории успеха</a>
+</li>
+<li>
+<a class="nav-link py-1 text-muted px-0" href="/testimonials">Отзывы студентов</a>
+</li>
+<li>
+<a class="nav-link py-1 text-muted px-0" href="/blog">Блог</a>
+</li>
+<li>
+<a class="nav-link py-1 text-muted px-0" href="/community">Вопросы по урокам</a>
+</li>
+<li>
+<a class="nav-link py-1 text-muted px-0" href="https://ru.hexlet.io/pages/recommended-books">Рекомендуемые книги</a>
+</li>
+</ul>
+<div class='fw-bold mt-3 mb-3'>Подписаться</div>
+<ul class='list-unstyled h3 text-start d-flex flex-wrap'>
+<li class='me-4 mb-2'>
+<a aria-label="Slack" target="_blank" class="text-muted" rel="noopener noreferrer nofollow" href="https://slack-ru.hexlet.io/"><span class='fab fa-slack fa-1x'></span>
+</a></li>
+<li class='me-4 mb-2'>
+<a aria-label="Youtube" target="_blank" class="text-muted" rel="noopener noreferrer nofollow" href="https://www.youtube.com/user/HexletUniversity"><span class='fab fa-youtube fa-1x'></span>
+</a></li>
+<li class='me-4 mb-2'>
+<a aria-label="Telegram" target="_blank" class="text-muted" rel="noopener noreferrer nofollow" href="https://t.me/hexlet_ru"><span class='fab fa-telegram fa-1x'></span>
+</a></li>
+<li class='me-4 mb-2'>
+<a aria-label="ВКонтакте" target="_blank" class="text-muted" rel="noopener noreferrer nofollow" href="https://vk.com/hexlet"><span class='fab fa-vk fa-1x'></span>
+</a></li>
+<li class='me-4 mb-2'>
+<a aria-label="Twitter" target="_blank" class="text-muted" rel="noopener noreferrer nofollow" href="https://twitter.com/HexletHQ"><span class='fab fa-twitter fa-1x'></span>
+</a></li>
+</ul>
+</div>
+<div class='col'>
+<div class='fw-bold mb-2'>Помощь</div>
+<ul class='nav flex-column align-items-start'>
+<li>
+<a class="nav-link py-1 text-muted px-0" target="_blank" rel="noopener noreferrer" href="https://help.hexlet.io/ru">Справка</a>
+</li>
+<li>
+<a class="nav-link py-1 text-muted px-0" href="/qna">Вопросы и ответы</a>
+</li>
+<li>
+<a rel="nofollow" class="nav-link py-1 text-muted px-0" href="mailto:support@hexlet.io">support@hexlet.io</a>
+</li>
+<li>
+<a class="nav-link py-1 text-muted px-0" target="_blank" rel="noopener noreferrer" href="https://github.com/Hexlet/proposals">Улучшить Хекслет</a>
+</li>
+</ul>
+<div class='fw-bold mt-3 mb-2'>Наши проекты</div>
+<ul class='nav flex-column align-items-start'>
+<li>
+<a class="nav-link py-1 text-muted px-0" target="_blank" rel="noopener noreferrer nofollow" href="https://hexly.ru/">Хекслет Колледж</a>
+</li>
+<li>
+<a class="nav-link py-1 text-muted px-0" target="_blank" rel="noopener noreferrer" href="https://ru.code-basics.com/">Code Basics</a>
+</li>
+<li>
+<a class="nav-link py-1 text-muted px-0" target="_blank" rel="noopener noreferrer" href="https://codebattle.hexlet.io">Codebattle</a>
+</li>
+<li>
+<a class="nav-link py-1 text-muted px-0" target="_blank" rel="noopener noreferrer" href="https://guides.hexlet.io/ru/">Hexlet Guides</a>
+</li>
+<li>
+<a class="nav-link py-1 text-muted px-0" target="_blank" rel="noopener noreferrer" href="https://cv.hexlet.io/">Хекслет-резюме</a>
+</li>
+</ul>
+<div class='dropdown mt-3'>
+<button aria-haspopup class='btn btn-link dropdown-toggle text-body text-decoration-none p-0 x-btn-focus-within' data-bs-toggle='dropdown'>
+<span class='fa-solid fa-globe me-1'></span>
+<span class='fw-bold'>Язык</span>
+</button>
+<ul class='dropdown-menu py-1'>
+<li>
+<a class="dropdown-item" href="/locale/switch?locale=en"><img width="22" alt="<span class=&quot;translation_missing&quot; title=&quot;translation missing: ru.layouts.footer_content.switch_locale_alt, lang: en&quot;>Switch Locale Alt</span>" class="my-auto me-1" src="https://cdn2.hexlet.io/assets/flag-en-f0b48c6562bb27879fbd685ece0133271ea043384dd9793843c246f862ac7cc1.svg" loading="lazy" />
+<span class='my-auto text-muted'>English</span>
+</a></li>
+<li>
+<a class="dropdown-item bg-primary bg-opacity-10" href="/locale/switch?locale=ru"><img width="22" alt="<span class=&quot;translation_missing&quot; title=&quot;translation missing: ru.layouts.footer_content.switch_locale_alt, lang: ru&quot;>Switch Locale Alt</span>" class="my-auto me-1" src="https://cdn2.hexlet.io/assets/flag-ru-593864ce87ae202b2c2e9393b2a6cf9384ac9cbb1c70632f4c6eeca34341483e.svg" loading="lazy" />
+<span class='my-auto text-muted'>Русский</span>
+</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+
+
+
+</body>
+</html>
