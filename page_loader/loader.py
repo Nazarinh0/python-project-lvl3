@@ -59,6 +59,7 @@ def get_resources(source, directory, page_url, dir_path):
     len_for_bar = len(tags)
     if not tags:
         log_error.error(f"Attributes src weren't found in {tags}\n")
+
     with ShadyBar('Downloading',
                   max=len_for_bar,
                   suffix='%(percent)d%%') as bar:
