@@ -31,7 +31,7 @@ def test_loader_filename():
             assert download(page_url, path=tmpdir) == expected
 
 
-def test_download_file_exist():
+def test_loader_resources():
     with requests_mock.Mocker() as m:
         page_url = 'http://ru.hexlet.io/courses/python-oop-basics'
         rss_url = 'https://ru.hexlet.io/lessons.rss'
