@@ -44,7 +44,9 @@ def test_download_file_exist():
 
         with tempfile.TemporaryDirectory() as tmpdir:
             download(page_url, path=tmpdir)
-            expected = tmpdir + '/' + 'ru-hexlet-io-courses-python-oop-basics.html'
             resources_dir = os.path.join(tmpdir, 'ru-hexlet-io-courses-python-oop-basics_files')
             assert len(os.listdir(resources_dir)) == 2
 
+            actual_rss = os.path.join(resources_dir, 'ru-hexlet-io-lessons.rss')
+            expected_rss = read('tests/fixtures/ru-hexlet-io-lessons.rss')
+            assert read(actual_rss) == expected_rss
