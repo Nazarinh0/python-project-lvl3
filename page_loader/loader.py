@@ -2,12 +2,10 @@ import os
 import re
 from urllib.parse import urljoin, urlparse
 import requests
-import logging.config
+import logging.config  # noqa WPS301
 from bs4 import BeautifulSoup
-from page_loader.logger_config import LOGGING_CONFIG
-from page_loader.logger_config import log_info, log_error
+from page_loader.logger_config import LOGGING_CONFIG, log_info, log_error
 from progress.bar import ShadyBar
-
 
 logging.config.dictConfig(LOGGING_CONFIG)
 
@@ -34,17 +32,16 @@ def download(page_url, path):
     log_info.info(f'Directory was created: {dir_path}')
     html = get_resources(page, dir_name, page_url, dir_path)
     file_path = os.path.join(path, file_name)
-    with open(file_path, 'w') as f:
-        f.write(html)
+    with open(file_path, 'w') as output:
+        output.write(html)
     log_info.info(f'HTML file was downloaded while pathing to {file_path}')
     return file_path
 
 
 def get_dest_name(source):
     # cut scheme from url for future output file name
-    match = re.search(r"(?<=//).*", source)
-    name = re.sub(r"\W", "-", match.group())
-    return name
+    match = re.search(r'(?<=//).*', source)  # noqa WPS360
+    return re.sub(r'\W', '-', match.group())
 
 
 def get_resources(source, directory, page_url, dir_path):
@@ -53,15 +50,17 @@ def get_resources(source, directory, page_url, dir_path):
         'link': 'href',
         'script': 'src',
     }
-    soup = BeautifulSoup(source.content, "html.parser")
+    soup = BeautifulSoup(source.content, 'html.parser')
     tags = soup.findAll(['img', 'link', 'script'])
     len_for_bar = len(tags)
     if not tags:
         log_error.error(f"Attributes src weren't found in {tags}\n")
 
-    with ShadyBar('Downloading',
-                  max=len_for_bar,
-                  suffix='%(percent)d%%') as bar:
+    with ShadyBar(
+        'Downloading',
+        max=len_for_bar,
+        suffix='%(percent)d%%',
+    ) as bar:  # noqa WPS110
         for tag in tags:
             bar.next()
             attr = tag_attr_dict[tag.name]
@@ -80,11 +79,11 @@ def get_resources(source, directory, page_url, dir_path):
 
 def download_file(url, file_name, dir_name):
     response = get_data(url)
-    with open(os.path.join(dir_name, file_name), 'wb') as file:
+    with open(os.path.join(dir_name, file_name), 'wb') as output:
         for chunk in response.iter_content(chunk_size=1024):
             # filter out keep-alive new chunks
             if chunk:
-                file.write(chunk)
+                output.write(chunk)
 
 
 def get_data(link):
