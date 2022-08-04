@@ -3,6 +3,7 @@
 ### Code Climate:
 [![Maintainability](https://api.codeclimate.com/v1/badges/aec025e1107b61dd06b9/maintainability)](https://codeclimate.com/github/Nazarinh0/python-project-lvl3/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/aec025e1107b61dd06b9/test_coverage)](https://codeclimate.com/github/Nazarinh0/python-project-lvl3/test_coverage)
+[![wemake-python-styleguide](https://img.shields.io/badge/style-wemake-000000.svg)](https://github.com/wemake-services/wemake-python-styleguide)
 
 # Page-loader
 
