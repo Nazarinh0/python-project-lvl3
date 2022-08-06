@@ -52,28 +52,33 @@ def get_resources(source, directory, page_url, dir_path):
     }
     soup = BeautifulSoup(source.content, 'html.parser')
     tags = soup.findAll(['img', 'link', 'script'])
-    len_for_bar = len(tags)
+
     if not tags:
         log_error.error(f"Attributes src weren't found in {tags}\n")
 
     with ShadyBar(
         'Downloading',
-        max=len_for_bar,
+        max=len(tags),
         suffix='%(percent)d%%',
     ) as bar:  # noqa WPS110
+
         for tag in tags:
             bar.next()
             attr = tag_attr_dict[tag.name]
             url = tag.get(attr)
             full_url = urljoin(page_url, url)
+
             if urlparse(full_url).netloc == urlparse(page_url).netloc:
                 file_ext = os.path.splitext(full_url)
+
                 if file_ext[1] == '':
                     file_name = get_dest_name(file_ext[0]) + '.html'
                 else:
                     file_name = get_dest_name(file_ext[0]) + file_ext[1]
+
                 download_file(full_url, file_name, dir_path)
                 tag[attr] = os.path.join(directory, file_name)
+
     return soup.prettify()
 
 
