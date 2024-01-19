@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 from page_loader.logger_config import LOGGING_CONFIG, log_info, log_error
 from progress.bar import ShadyBar
 
+
 logging.config.dictConfig(LOGGING_CONFIG)
 
 
