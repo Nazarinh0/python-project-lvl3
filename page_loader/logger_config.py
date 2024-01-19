@@ -1,5 +1,6 @@
 import logging
 
+
 ERROR_LOG_FILENAME = '.page-loader-errors.log'
 
 LOGGING_CONFIG = {
